@@ -1,9 +1,9 @@
 {
   "name": "scaffold-express-app",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Scaffold an express app",
   "repository": "https://github.com/saijeevanballa/express-generator",
-  "main": "./bin/index.js",
+  "main": "index.js",
   "bin": {
     "scaffold-express-app": "./bin/index.js"
   },
@@ -17,5 +17,8 @@
     "inquirer": "7.1.0"
   },
   "devDependencies": {},
+  "standard": {
+    "ignore": ["templates"]
+  },
   "keywords": ["express", "scaffold", "generator"]
 }
