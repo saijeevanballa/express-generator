@@ -1,16 +1,18 @@
 {
-  "name": "Js-Template",
+  "name": "scaffold-express-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Scaffold an express app",
+  "repository": "https://github.com/saijeevanballa/express-generator",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Sai Jeevan Balla",
+  "license": "ISC",
   "dependencies": {
     "inquirer": "7.1.0"
   },
-  "devDependencies": {
-    "nodemon": "1.18.4"
-  },
-  "keywords": []
+  "devDependencies": {},
+  "keywords": ["express", "scaffold", "generator"]
 }
