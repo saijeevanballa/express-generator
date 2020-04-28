@@ -1,8 +1,10 @@
+#!/usr/bin/env/ node
 const inquirer = require("inquirer");
 const fs = require("fs");
+const path = require("path");
 const CURR_DIR = process.cwd();
 const NAME_REGEX = /^([A-Za-z\-\_\d])+$/;
-const CHOICES_Q1 = fs.readdirSync(`${__dirname}/templates`);
+const CHOICES_Q1 = fs.readdirSync(path.join(__dirname, "..", "templates"));
 
 (async () => {
   //  Question 1
@@ -25,7 +27,7 @@ const CHOICES_Q1 = fs.readdirSync(`${__dirname}/templates`);
       type: "list",
       message: "What project template would you like to generate?",
       choices: fs.readdirSync(
-        `${__dirname}/templates/${ans1["project-language"]}`
+        path.join(__dirname, "..", "templates", `${ans1["project-language"]}`)
       )
     },
     {
@@ -48,7 +50,13 @@ const CHOICES_Q1 = fs.readdirSync(`${__dirname}/templates`);
     const languageChoice = answers["project-language"];
     const projectChoice = answers["project-choice"];
     const projectName = answers["project-name"];
-    const templatePath = `${__dirname}/templates/${languageChoice}/${projectChoice}`;
+    const templatePath = path.join(
+      __dirname,
+      "..",
+      "templates",
+      languageChoice,
+      projectChoice
+    );
     fs.mkdirSync(`${CURR_DIR}/${projectName}`);
     createDirectoryContents(templatePath, projectName);
   })
