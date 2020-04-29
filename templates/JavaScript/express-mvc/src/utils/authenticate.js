@@ -2,11 +2,11 @@
 
 const authenticate = function (req, res, next) {
     try {
-        console.log("API: ", new Date())
+        console.log("API: ", new Date());
         return next();
     } catch (err) {
-        return next(new APIError('Unauthorized'));
+        return next(Error('Unauthorized'));
     };
 };
 
-module.exports = authenticate
+module.exports = authenticate;

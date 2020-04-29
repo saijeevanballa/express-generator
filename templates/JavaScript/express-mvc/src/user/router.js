@@ -1,5 +1,5 @@
 const Router = require("express");
-const userModule = require("./module")
+const userModule = require("./module");
 const router = Router();
 
 // User Get Method
@@ -29,4 +29,4 @@ router.delete("/", (req, res, next)=>{
     }
 });
 
-module.exports = router
+module.exports = router;
