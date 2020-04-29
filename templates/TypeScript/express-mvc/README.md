@@ -25,3 +25,9 @@ $ npm install
 ```sh
 $ npm run start
 ```
+
+## Generate Build
+
+```sh
+$ npm run build
+```

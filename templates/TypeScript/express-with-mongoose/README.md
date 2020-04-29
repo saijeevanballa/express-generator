@@ -20,8 +20,14 @@ $ cd %project-name%
 $ npm install
 ```
 
-`step 3:` ânpm run startâ is a run command from your scripts located in your package.
+`step 3:` npm run start is a run command from your scripts located in your package.
 
 ```sh
 $ npm run start
+```
+
+## Generate Build
+
+```sh
+$ npm run build
 ```
