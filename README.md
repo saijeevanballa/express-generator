@@ -1,13 +1,13 @@
 # scaffold-express-app
 
-Scaffold out an [Express app](https://github.com/saijeevanballa/express-generator).
 
 > A simple express project generator
 
-## Usage
+## Installation
 
-```sh
-$ npm init scaffold-express-app
+```
+$ npm install -g scaffold-express-app
+$ scaffold-express-app
 ```
  OR
 ```sh
@@ -17,9 +17,28 @@ $ npx scaffold-express-app
 `NOTE:` With `npm@6` this will run this package with `npx`. If you are on an earlier version of `npm` you will
 need to install globally and run directly:
 
+## Usage
+
+### Guided Process
+
+It couldn't be easier to create new express app. Simply type `scaffold-express-app` and you'll start the guided process, being asked up to 3 questions:
+
+#### Question 1:
+```sh
+? Choose a language for the project template? 
+❯ JavaScript 
+  TypeScript
 ```
-$ npm install -g scaffold-express-app
-$ scaffold-express-app
+#### Question 2:
+```sh
+? What project template would you like to generate? 
+❯ express-basic 
+  express-mvc  
+```
+#### Question 3:
+```sh
+? What project template would you like to generate? express-mvc
+? Enter Project name: demo-app
 ```
 
 ## Folder Structure
