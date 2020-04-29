@@ -6,15 +6,14 @@ const path = require("path");
 const CURR_DIR = process.cwd();
 const NAME_REGEX = /^([A-Za-z\-\_\d])+$/;
 const CHOICES_Q1 = fs.readdirSync(path.join(__dirname, "..", "templates"));
-
+let ans;
 (async () => {
   //  Question 1
   const QUESTIONS_1 = [
     {
       name: "project-language",
       type: "list",
-      message:
-        "Choose a language for project template would you like to generate?",
+      message: "Choose a language for the project template?",
       choices: CHOICES_Q1
     }
   ];
@@ -48,6 +47,7 @@ const CHOICES_Q1 = fs.readdirSync(path.join(__dirname, "..", "templates"));
   return { ...ans1, ...ans2 };
 })()
   .then(answers => {
+    ans = answers;
     const languageChoice = answers["project-language"];
     const projectChoice = answers["project-choice"];
     const projectName = answers["project-name"];
@@ -60,6 +60,10 @@ const CHOICES_Q1 = fs.readdirSync(path.join(__dirname, "..", "templates"));
     );
     fs.mkdirSync(`${CURR_DIR}/${projectName}`);
     createDirectoryContents(templatePath, projectName);
+    console.log("Project setup complete!");
+    console.log(`$ cd ${projectName}`);
+    console.log("$ npm install");
+    console.log("$ npm run start");
   })
   .catch(console.error);
 
@@ -70,10 +74,10 @@ function createDirectoryContents(templatePath, newProjectPath) {
     const stats = fs.statSync(origFilePath);
     if (stats.isFile()) {
       let contents = fs.readFileSync(origFilePath, "utf8");
-      let projectName = contents.match(/%(.*?)%/g);
-      if (projectName)
-        for (const rep of projectName)
-          contents = replaceAll(contents, rep, newProjectPath);
+      let keys = contents.match(/%(.*?)%/g);
+      if (keys)
+        for (const rep of keys)
+          contents = replaceAll(contents, rep, ans[`${rep.slice(1, -1)}`]);
       const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
       fs.writeFileSync(writePath, contents, "utf8");
     } else if (stats.isDirectory()) {
