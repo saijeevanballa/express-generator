@@ -23,21 +23,20 @@ need to install globally and run directly:
 
 It couldn't be easier to create new express app. Simply type `scaffold-express-app` and you'll start the guided process, being asked up to 3 questions:
 
-#### Question 1:
+#### Question 1: ( Choose one option)
 ```sh
 ? Choose a language for the project template? 
 ❯ JavaScript 
   TypeScript
 ```
-#### Question 2:
+#### Question 2: ( Choose one option)
 ```sh
 ? What project template would you like to generate? 
 ❯ express-basic 
   express-mvc  
 ```
-#### Question 3:
+#### Question 3: ( Enter your project name)
 ```sh
-? What project template would you like to generate? express-mvc
 ? Enter Project name: demo-app
 ```
 

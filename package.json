@@ -1,6 +1,6 @@
 {
   "name": "scaffold-express-app",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Scaffold an express app",
   "repository": "https://github.com/saijeevanballa/express-generator",
   "main": "index.js",
